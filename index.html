@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>El futuro de la IA</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+      :root {
+        --mango-black: #1a1a1a; /* A slightly softer black than pure #000 */
+        --mango-white: #ffffff;
+        --mango-grey-light: #f8f8f8;
+        --mango-grey-medium: #e0e0e0;
+        --mango-grey-dark: #666666;
+        --mango-accent: #c7a17a; /* A potential Mango-esque warm accent, not heavily used here */
+      }
+
+      body {
+        margin: 0;
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--mango-grey-light);
+        color: var(--mango-black);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 20px;
+        box-sizing: border-box;
+        text-align: center;
+      }
+
+      .container {
+        background-color: var(--mango-white);
+        padding: 5% 6%;
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        max-width: 90%;
+        width: 100%;
+        animation: fadeIn 0.8s ease-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .speaker-image {
+        display: block; /* Helps with centering and margin */
+        max-width: 200px; /* Max width, adjust as needed */
+        height: auto; /* Maintain aspect ratio */
+        margin: 0 auto 25px auto; /* Center horizontally, add bottom margin */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px; /* Slightly rounded corners, remove if sharp corners are desired */
+      }
+
+      .presentation-title {
+        font-size: 2.2em; /* Large and impactful */
+        font-weight: 600;
+        color: var(--mango-black);
+        margin-top: 0;
+        margin-bottom: 30px;
+        line-height: 1.3;
+      }
+
+      .download-button {
+        display: inline-block;
+        background-color: var(--mango-black);
+        color: var(--mango-white);
+        padding: 15px 35px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: 500;
+        font-size: 1.1em;
+        text-transform: uppercase; /* Common Mango button style */
+        letter-spacing: 0.5px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        border: 2px solid var(--mango-black);
+        margin-top: 20px;
+      }
+
+      .download-button:hover,
+      .download-button:focus {
+        background-color: var(--mango-grey-dark);
+        border-color: var(--mango-grey-dark);
+        color: var(--mango-white);
+        transform: translateY(-2px);
+        outline: none;
+      }
+
+      .download-button:active {
+        transform: translateY(0px);
+      }
+
+      footer {
+        margin-top: 40px;
+        font-size: 0.9em;
+        color: var(--mango-grey-dark);
+      }
+
+      footer a {
+        color: var(--mango-black);
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      /* Responsive adjustments */
+      @media (min-width: 768px) {
+        .container {
+          max-width: 80%;
+          padding: 40px 50px;
+        }
+      }
+
+      @media (min-width: 992px) {
+        .container {
+          max-width: 700px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          padding: 25px 20px;
+          margin: 10px;
+        }
+        .presentation-title {
+          font-size: 1.8em;
+        }
+        .speaker-image {
+          max-width: 150px; /* Smaller max-width on smaller screens */
+        }
+        .download-button {
+          padding: 12px 25px;
+          font-size: 1em;
+          width: 100%;
+          box-sizing: border-box;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img
+        src="https://fabrics.mango.com/speakers/5.AdriaArnau.png"
+        alt="Adria Arnau - Speaker"
+        class="speaker-image"
+      />
+
+      <h1 class="presentation-title">
+        El futuro de la IA: de MLOps a agentes inteligentes
+      </h1>
+
+      <a
+        href="fabrics-futuro-ia-mlops.pdf"
+        class="download-button"
+        download="Fabrics-Futuro_De_La_IA_MLOps-Presentacion.pdf"
+      >
+        Descargar Presentación (PDF)
+      </a>
+    </div>
+
+    <footer>
+      <p>
+        &copy; 2025
+        <a
+          href="https://fabrics.mango.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Mango Fabrics</a
+        >.
+      </p>
+    </footer>
+  </body>
+</html>
