@@ -4,19 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>El futuro de la IA</title>
-    <link rel="icon" href="https://fabrics.mango.com/logo.png" type="image/png">
+    <link
+      rel="icon"
+      href="https://fabrics.mango.com/logo.png"
+      type="image/png"
+    />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
-
       :root {
-        --mango-black: #1a1a1a; /* A slightly softer black than pure #000 */
+        --mango-black: #1a1a1a;
         --mango-white: #ffffff;
         --mango-grey-light: #f8f8f8;
         --mango-grey-medium: #e0e0e0;
         --mango-grey-dark: #666666;
-        --mango-accent: #c7a17a; /* A potential Mango-esque warm accent, not heavily used here */
+        --mango-accent: #c7a17a;
       }
-
       body {
         margin: 0;
         font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -32,17 +34,15 @@
         box-sizing: border-box;
         text-align: center;
       }
-
       .container {
         background-color: var(--mango-white);
         padding: 5% 6%;
-        border-radius: 8px;
+        border-radius: 14px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         max-width: 90%;
         width: 100%;
         animation: fadeIn 0.8s ease-out;
       }
-
       @keyframes fadeIn {
         from {
           opacity: 0;
@@ -53,25 +53,30 @@
           transform: translateY(0);
         }
       }
-
       .speaker-image {
-        display: block; /* Helps with centering and margin */
-        max-width: 200px; /* Max width, adjust as needed */
-        height: auto; /* Maintain aspect ratio */
-        margin: 0 auto 25px auto; /* Center horizontally, add bottom margin */
+        display: block;
+        max-width: 200px;
+        height: auto;
+        margin: 0 auto 25px auto;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        border-radius: 8px; /* Slightly rounded corners, remove if sharp corners are desired */
+        border-radius: 8px;
       }
-
       .presentation-title {
-        font-size: 2.2em; /* Large and impactful */
+        font-size: 2.2em;
         font-weight: 600;
         color: var(--mango-black);
         margin-top: 0;
-        margin-bottom: 30px;
+        margin-bottom: 28px;
         line-height: 1.3;
       }
-
+      .button-row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 18px;
+        justify-content: center;
+        margin-bottom: 28px;
+      }
       .download-button {
         display: inline-block;
         background-color: var(--mango-black);
@@ -81,13 +86,13 @@
         border-radius: 5px;
         font-weight: 500;
         font-size: 1.1em;
-        text-transform: uppercase; /* Common Mango button style */
+        text-transform: uppercase;
         letter-spacing: 0.5px;
         transition: background-color 0.3s ease, transform 0.2s ease;
         border: 2px solid var(--mango-black);
-        margin-top: 20px;
+        margin-top: 0;
+        margin-bottom: 8px;
       }
-
       .download-button:hover,
       .download-button:focus {
         background-color: var(--mango-grey-dark);
@@ -96,41 +101,66 @@
         transform: translateY(-2px);
         outline: none;
       }
-
       .download-button:active {
         transform: translateY(0px);
       }
-
+      .linkedin-button {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 18px;
+        background: none;
+        border-radius: 6px;
+        border: 1.5px solid var(--mango-grey-medium);
+        text-decoration: none;
+        color: var(--mango-black);
+        font-weight: 500;
+        font-size: 1em;
+        transition: background 0.2s, border-color 0.2s, color 0.2s,
+          box-shadow 0.2s;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      }
+      .linkedin-button:hover,
+      .linkedin-button:focus {
+        background-color: var(--mango-grey-dark);
+        border-color: var(--mango-grey-dark);
+        color: var(--mango-white);
+        transform: translateY(-2px);
+        outline: none;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+      }
+      .linkedin-logo {
+        width: 22px;
+        height: 22px;
+        filter: none;
+        background: white;
+        border-radius: 4px;
+        padding: 2px;
+      }
       footer {
         margin-top: 40px;
         font-size: 0.9em;
         color: var(--mango-grey-dark);
       }
-
       footer a {
         color: var(--mango-black);
         text-decoration: none;
         font-weight: 500;
       }
-
       footer a:hover {
         text-decoration: underline;
       }
-
-      /* Responsive adjustments */
       @media (min-width: 768px) {
         .container {
           max-width: 80%;
           padding: 40px 50px;
         }
       }
-
       @media (min-width: 992px) {
         .container {
           max-width: 700px;
         }
       }
-
       @media (max-width: 600px) {
         .container {
           padding: 25px 20px;
@@ -140,7 +170,7 @@
           font-size: 1.8em;
         }
         .speaker-image {
-          max-width: 150px; /* Smaller max-width on smaller screens */
+          max-width: 150px;
         }
         .download-button {
           padding: 12px 25px;
@@ -155,14 +185,42 @@
     <div class="container">
       <img
         src="https://fabrics.mango.com/speakers/5.AdriaArnau.png"
-        alt="Adria Arnau - Speaker"
+        alt="Adria Correas y Arnau Font - Ponentes"
         class="speaker-image"
       />
-
       <h1 class="presentation-title">
         El futuro de la IA: de MLOps a agentes inteligentes
       </h1>
-
+      <div class="button-row">
+        <a
+          href="https://www.linkedin.com/in/adria-correas-grifoll/"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="LinkedIn Adrià Correas"
+          class="linkedin-button"
+        >
+          <img
+            src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"
+            alt="LinkedIn Adrià Correas"
+            class="linkedin-logo"
+          />
+          Adrià Correas
+        </a>
+        <a
+          href="https://www.linkedin.com/in/arnau-font-gonzalez/"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="LinkedIn Arnau Font"
+          class="linkedin-button"
+        >
+          <img
+            src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"
+            alt="LinkedIn Arnau Font"
+            class="linkedin-logo"
+          />
+          Arnau Font
+        </a>
+      </div>
       <a
         href="fabrics-futuro-ia-mlops.pdf"
         class="download-button"
@@ -171,7 +229,6 @@
         Descargar Presentación (PDF)
       </a>
     </div>
-
     <footer>
       <p>
         &copy; 2025
