@@ -180,6 +180,77 @@
         }
       }
     </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const root = document.documentElement;
+        const darkModeKey = "mango-dark-mode";
+        const darkModeButton = document.createElement("button");
+        darkModeButton.setAttribute("aria-label", "Toggle dark mode");
+        darkModeButton.className = "dark-mode-toggle";
+
+        function getMoonSVG(isDark) {
+          return isDark
+            ? `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" fill="#fff" stroke="#fff"/></svg>`
+            : `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" fill="#1a1a1a" stroke="#1a1a1a"/></svg>`;
+        }
+
+        const isDark = localStorage.getItem(darkModeKey) === "true";
+        darkModeButton.innerHTML = getMoonSVG(isDark);
+        darkModeButton.style.position = "fixed";
+        darkModeButton.style.top = "24px";
+        darkModeButton.style.right = "24px";
+        darkModeButton.style.background = "none";
+        darkModeButton.style.border = "none";
+        darkModeButton.style.cursor = "pointer";
+        darkModeButton.style.zIndex = "1000";
+        darkModeButton.style.padding = "6px";
+        darkModeButton.style.borderRadius = "50%";
+        darkModeButton.style.transition = "background 0.2s";
+        darkModeButton.onmouseover = () =>
+          (darkModeButton.style.background = "rgba(0,0,0,0.07)");
+        darkModeButton.onmouseout = () =>
+          (darkModeButton.style.background = "none");
+        document.body.appendChild(darkModeButton);
+
+        function setDarkMode(on) {
+          if (on) {
+            root.style.setProperty("--mango-grey-light", "#1a1a1a");
+            root.style.setProperty("--mango-white", "#232323");
+            root.style.setProperty("--mango-black", "#f8f8f8");
+            document.body.classList.add("dark-mode");
+            document.body.style.transition = "none";
+            document.body.style.backgroundColor = "#1a1a1a";
+            darkModeButton.innerHTML = getMoonSVG(true);
+          } else {
+            root.style.setProperty("--mango-grey-light", "#f8f8f8");
+            root.style.setProperty("--mango-white", "#ffffff");
+            root.style.setProperty("--mango-black", "#1a1a1a");
+            document.body.classList.remove("dark-mode");
+            document.body.style.transition = "none";
+            document.body.style.backgroundColor = "#f8f8f8";
+            darkModeButton.innerHTML = getMoonSVG(false);
+          }
+        }
+
+        setDarkMode(isDark);
+
+        darkModeButton.addEventListener("click", function () {
+          const currentlyDark = document.body.classList.contains("dark-mode");
+          setDarkMode(!currentlyDark);
+          localStorage.setItem(darkModeKey, String(!currentlyDark));
+        });
+      });
+    </script>
+    <style>
+      .dark-mode-toggle svg {
+        display: block;
+        color: var(--mango-black);
+        width: 24px;
+        height: 24px;
+        pointer-events: none;
+      }
+      /* Dark mode transition removed for immediate change */
+    </style>
   </head>
   <body>
     <div class="container">
